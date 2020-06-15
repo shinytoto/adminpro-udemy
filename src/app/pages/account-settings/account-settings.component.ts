@@ -1,20 +1,26 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
+// Services
+import { SettingsService } from '../../services/service.index';
+
 @Component({
   selector: 'app-account-settings',
   templateUrl: './account-settings.component.html',
 })
 export class AccountSettingsComponent implements OnInit {
-  constructor(@Inject(DOCUMENT) private _document) {}
+  constructor(
+    @Inject(DOCUMENT) private _document,
+    public _ajustes: SettingsService
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.colocarCheck();
+  }
 
   cambiarColor(tema: string, link: any) {
     this.aplicarCheck(link);
-
-    const url = `assets/css/colors/${tema}.css`;
-    this._document.getElementById('theme').setAttribute('href', url);
+    this._ajustes.aplicarTema(tema);
   }
 
   aplicarCheck(link: any) {
@@ -24,5 +30,18 @@ export class AccountSettingsComponent implements OnInit {
     }
 
     link.classList.add('working');
+  }
+
+  colocarCheck() {
+    const selectores: any = document.getElementsByClassName('selector');
+
+    const tema = this._ajustes.ajustes.tema;
+
+    for (const ref of selectores) {
+      if (ref.getAttribute('data-theme') === tema) {
+        ref.classList.add('working');
+        break;
+      }
+    }
   }
 }
