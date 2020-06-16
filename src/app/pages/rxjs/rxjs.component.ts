@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable, Subscriber } from 'rxjs';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Observable, Subscriber, Subscription } from 'rxjs';
 import { retry, map, filter } from 'rxjs/operators';
 
 @Component({
@@ -7,9 +7,11 @@ import { retry, map, filter } from 'rxjs/operators';
   templateUrl: './rxjs.component.html',
   styles: [],
 })
-export class RxjsComponent implements OnInit {
+export class RxjsComponent implements OnInit, OnDestroy {
+  subscription: Subscription;
+
   constructor() {
-    this.regresaObservable().subscribe(
+    this.subscription = this.regresaObservable().subscribe(
       (response) => console.log(response),
       (error) => console.log(error),
       () => console.log('El observador termino.')
@@ -17,6 +19,11 @@ export class RxjsComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  ngOnDestroy(): void {
+    console.log('La pagina se cerró');
+    this.subscription.unsubscribe();
+  }
 
   regresaObservable(): Observable<any> {
     return new Observable((observer: Subscriber<any>) => {
@@ -31,15 +38,15 @@ export class RxjsComponent implements OnInit {
 
         observer.next(salida);
 
-        if (contador === 3) {
-          clearInterval(intervalo);
-          observer.complete();
-        }
+        // if (contador === 3) {
+        //   clearInterval(intervalo);
+        //   observer.complete();
+        // }
         // if (contador === 2) {
         //   clearInterval(intervalo);
         //   observer.error('Error');
         // }
-      }, 500);
+      }, 750);
     }).pipe(
       map((resp) => resp.valor),
       filter((valor, index) => {
