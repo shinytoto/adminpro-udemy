@@ -11,7 +11,7 @@ export class RxjsComponent implements OnInit, OnDestroy {
   subscription: Subscription;
 
   constructor() {
-    this.subscription = this.regresaObservable().subscribe(
+    this.subscription = this.regresarObservable().subscribe(
       (response) => console.log(response),
       (error) => console.log(error),
       () => console.log('El observador termino.')
@@ -25,7 +25,7 @@ export class RxjsComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  regresaObservable(): Observable<any> {
+  regresarObservable(): Observable<any> {
     return new Observable((observer: Subscriber<any>) => {
       let contador = 0;
 
