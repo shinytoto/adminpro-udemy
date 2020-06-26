@@ -5,3 +5,11 @@
 .pointer {
   cursor: pointer
 }
+
+.align {
+  text-align: center;
+}
+
+.w150 {
+  width: 150px;
+}

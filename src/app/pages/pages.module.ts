@@ -7,6 +7,7 @@ import { PagesComponent } from './pages.component';
 
 // Modules
 import { SharedModule } from '../shared/shared.module';
+import { PipesModule } from '../pipes/pipes.module';
 
 // Routes
 import { PAGES_ROUTES } from './pages.routing';
@@ -22,6 +23,7 @@ import { RxjsComponent } from './rxjs/rxjs.component';
 // temporal
 import { IncrementadorComponent } from '../components/incrementador/incrementador.component';
 import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -34,12 +36,14 @@ import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.co
     RxjsComponent,
     IncrementadorComponent,
     GraficoDonaComponent,
+    ProfileComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
     ChartsModule,
     SharedModule,
+    PipesModule,
     PAGES_ROUTES,
   ],
   exports: [DashboardComponent, Graficas1Component, ProgressComponent],

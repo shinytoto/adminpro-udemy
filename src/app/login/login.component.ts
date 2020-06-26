@@ -46,9 +46,7 @@ export class LoginComponent implements OnInit {
       .login(usuario, forma.value.recuerdame)
       .subscribe((response) => {
         this._router.navigate(['/dashboard']);
-      }),
-      console.log(forma.value);
-
+      });
     // this._router.navigate(['/dashboard']);
   }
 
@@ -76,8 +74,6 @@ export class LoginComponent implements OnInit {
       this._usuarioService.googleLogin(token).subscribe((response) => {
         window.location.href = '#/dashboard';
       });
-
-      console.log(token);
     });
   }
 
