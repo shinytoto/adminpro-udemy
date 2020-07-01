@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { plugins } from 'chart.js';
 
+declare function init_plugins();
 @Component({
   selector: 'app-nopagefound',
   templateUrl: './nopagefound.component.html',
@@ -7,5 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class NopagefoundComponent implements OnInit {
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    init_plugins();
+  }
 }

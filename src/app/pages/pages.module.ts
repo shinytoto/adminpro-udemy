@@ -19,11 +19,13 @@ import { ProgressComponent } from './progress/progress.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
 
 // temporal
 import { IncrementadorComponent } from '../components/incrementador/incrementador.component';
 import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
 
 @NgModule({
   declarations: [
@@ -34,9 +36,11 @@ import { ProfileComponent } from './profile/profile.component';
     AccountSettingsComponent,
     PromesasComponent,
     RxjsComponent,
+    UsuariosComponent,
     IncrementadorComponent,
     GraficoDonaComponent,
     ProfileComponent,
+    ModalUploadComponent,
   ],
   imports: [
     CommonModule,
