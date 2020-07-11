@@ -18,7 +18,6 @@ export class SubirArchivoService {
       xhr.onreadystatechange = () => {
         if (xhr.readyState === 4) {
           if (xhr.status === 200) {
-            console.log('Imagen Subida.');
             resolve(JSON.parse(xhr.response));
           } else {
             console.log('Error al subir archivo.');

@@ -6,12 +6,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // temporal
 
 // Modules
 import { PagesModule } from './pages/pages.module';
+import { ServiceModule } from './services/service.module';
 
 // Routes
 import { APP_ROUTES } from './app.routing';
-
-// Services
-import { ServiceModule } from './services/service.module';
 
 // Components
 import { LoginComponent } from './login/login.component';

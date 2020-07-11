@@ -20,6 +20,9 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { HospitalesComponent } from './hospitales/hospitales.component';
+import { MedicosComponent } from './medicos/medicos.component';
+import { MedicoComponent } from './medicos/medico.component';
 
 // temporal
 import { IncrementadorComponent } from '../components/incrementador/incrementador.component';
@@ -41,6 +44,9 @@ import { ModalUploadComponent } from '../components/modal-upload/modal-upload.co
     GraficoDonaComponent,
     ProfileComponent,
     ModalUploadComponent,
+    HospitalesComponent,
+    MedicosComponent,
+    MedicoComponent,
   ],
   imports: [
     CommonModule,

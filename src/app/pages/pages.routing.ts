@@ -10,6 +10,9 @@ import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { HospitalesComponent } from './hospitales/hospitales.component';
+import { MedicosComponent } from './medicos/medicos.component';
+import { MedicoComponent } from './medicos/medico.component';
 
 // Guards
 import { LoginGuardGuard } from '../services/guards/login-guard.guard';
@@ -30,6 +33,12 @@ const pagesRoutes: Routes = [
        // * Mantenimientos
       { path: 'usuarios', component: UsuariosComponent,
        data: {title: 'Mantenimiento de Usuarios', description: 'Mantenimiento de usuarios de la aplicación.'}},
+      { path: 'hospitales', component: HospitalesComponent,
+        data: {title: 'Mantenimiento de Hospitales', description: 'Mantenimiento de hospitales de la aplicación.'}},
+      { path: 'medicos', component: MedicosComponent,
+        data: {title: 'Mantenimiento de Médicos', description: 'Mantenimiento de médicos de la aplicación.'}},
+      { path: 'medico/:id', component: MedicoComponent,
+        data: {title: 'Actualizar Médico', description: 'Actualizar un médico de la aplicación.'}},
       { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     ],
   },
